@@ -677,6 +677,7 @@ const templateList = [
       <li>Add labels if desired. Do not add credits in Juxtapose (you will add them below). Click the Publish button.</li>
       <li>Copy the share link (should start with <code>https://cdn.knightlab.com/...</code>) and paste it below.</li>
     </ol>
+    <div>Note: The images will not load until the DO is published. To preview the slider in staging, you can create a Juxtapose embed using staging image URLs (<code>https://staging.www.science.org/...</code>), then replace it with an updated embed using the final live URLs before publishing/scheduling.</div>
     `,
     fields: [
       { name: "Juxtapose link" },
