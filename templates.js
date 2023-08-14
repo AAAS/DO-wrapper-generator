@@ -681,7 +681,7 @@ const templateList = [
     fields: [
       { name: "Juxtapose link" },
       { name: "Aspect ratio", type: 'dimensions' },
-      { name: "Figure Caption", type: "textarea" },
+      { name: "Figure Caption", type: "textarea", default: "Drag the slider to compare the two images." },
       { name: "Credit Text" }
     ],
     html: `
