@@ -57,7 +57,8 @@ class FieldText extends React.Component {
       type: 'text',
       value: this.props.value,
       size: 100,
-      onChange: (event) => this.props.onChange(event.target.value)
+      onChange: (event) => this.props.onChange(event.target.value.replaceAll("/admin/dopub/", "/do/"))
+      // remove replaceAll function once AAAS-2530 is resolved
     });
   }
 }
