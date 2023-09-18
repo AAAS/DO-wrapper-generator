@@ -584,7 +584,6 @@ const templateList = [
     {
     name: "News Feature Paired Images (full-width)",
     fields: [
-      { name: "Article DOI" },
       { name: "Image file path Left" },
       { name: "Alt Text Left" },
       { name: "Image file path Right" },
@@ -596,10 +595,10 @@ const templateList = [
 <figure class="news-article__figure border-light-gray  plain border-bottom pb-3">
   <div class="news-article__figure__two-figures">
     <div class="news-article__figure__image__wrapper">
-      <img src="/do/{{{Article DOI}}}/files/{{{Image file name Left}}}" alt="{{{Alt Text Left}}}" class="news-article__figure__image">
+      <img src="{{{Image file path Left}}}" alt="{{{Alt Text Left}}}" class="news-article__figure__image">
     </div>
     <div class="news-article__figure__image__wrapper">
-      <img src="/do/{{{Article DOI}}}/files/{{{Image file name Right}}}" alt="{{{Alt Text Right}}}" class="news-article__figure__image">
+      <img src="{{{Image file path Right}}}" alt="{{{Alt Text Right}}}" class="news-article__figure__image">
     </div>
   </div>
   <figcaption class="news-article__figure__caption">
@@ -623,8 +622,7 @@ const templateList = [
     ],
     child: {
       fields: [
-        { name: "Article DOI" },
-        { name: "Image file name",  note: "File names must be lowercase." },
+        { name: "Image file path"},
         { name: "Alt Text" },
         { name: "Figure Caption", type: "textarea" },
         { name: "Credit Text" }
