@@ -661,7 +661,7 @@ const templateList = [
     name: "Figure: Slider (Juxtapose)",
     desc: `
     <div>On the article page, use PageBuilder to edit at the DOI scope, and add the following code to an HTML widget at the end of the article body. <strong>The slider will not work without this code.</strong></div>
-    <code>&lt;script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"&gt;&lt;/script&gt;<br/>&lt;link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css"&gt;<br/>&lt;link rel="stylesheet" href="/pb-assets/libraries/juxtapose-science.css"&gt;</code>
+    <pre>&lt;script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"&gt;&lt;/script&gt;<br/>&lt;link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css"&gt;<br/>&lt;link rel="stylesheet" href="/pb-assets/libraries/juxtapose-science.css"&gt;</pre>
     `,
     fields: [
       { name: "Left image file path"},
