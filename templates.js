@@ -660,30 +660,28 @@ const templateList = [
   {
     name: "Figure: Slider (Juxtapose)",
     desc: `
-    <strong>Instructions:</strong>
-    <ol>
-      <li>Upload the two image files to the article DO.</li>
-      <li>Go to <a href="https://juxtapose.knightlab.com/#make">juxtapose.knightlab.com/#make</a>.</li>
-      <li>Paste the image URLs using this file path: <code>https://www.science.org/do/<strong>ArticleDOI</strong>/files/<strong>ImageFileName</strong></code></li>
-      <li>Add labels if desired. Do not add credits in Juxtapose (you will add them below). Click the Publish button.</li>
-      <li>Copy the share link (should start with <code>https://cdn.knightlab.com/...</code>) and paste it below.</li>
-    </ol>
-    <div>Note: The images will not load until the DO is published. To preview the slider in staging, you can create a Juxtapose embed using staging image URLs (<code>https://staging.www.science.org/...</code>), then replace it with an updated embed using the final live URLs before publishing/scheduling.</div>
+    <div>On the article page, use PageBuilder to edit at the DOI scope, and add the following code to an HTML widget at the end of the article body. <strong>The slider will not work without this code.</strong></div>
+    <code>&lt;script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"&gt;&lt;/script&gt;<br/>&lt;link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css"&gt;<br/>&lt;link rel="stylesheet" href="/pb-assets/libraries/juxtapose-science.css"&gt;</code>
     `,
     fields: [
-      { name: "Juxtapose link" },
-      { name: "Aspect ratio", type: 'dimensions' },
+      { name: "Left image file path"},
+      { name: "Left image alt text"},
+      { name: "Left image label", note: "Optional"},
+      { name: "Right image file path"},
+      { name: "Right image alt text"},
+      { name: "Right image label", note: "Optional"},
+      { name: "Slider start position", type:"number", note: "%", default: "50"},
       { name: "Figure Caption", type: "textarea", default: "Drag the slider to compare the two images." },
       { name: "Credit Text" }
     ],
     html: `
 <figure class="news-article__figure border-light-gray">
   <div class="news-article__figure__image__wrapper">
-    <div class="news-article__figure__image mb-2" style="position: relative; display: block; max-width: 100%;">
-        <div style="padding-top: {{{Aspect ratio}}};">
-            <iframe class="juxtapose" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;" src="{{{Juxtapose link}}}" width="100%" height="100%" frameborder="0"></iframe></div>
-        </div>
+    <div class="juxtapose mb-2">
+      <img src="{{{Left image file path}}}" data-label="{{{Left image label}}}" alt="{{{Left image alt text}}}" />
+      <img src="{{{Right image file path}}}" data-label="{{{Right image label}}}" alt="{{{Right image alt text}}}" />
     </div>
+  </div>
   </div>
   <figcaption class="news-article__figure__caption">
     <span class="text-sm text-gray letter-spacing-default">{{{Figure Caption}}}<span class="text-xxs ml-2 text-uppercase">{{{Credit Text}}}</span></span>

@@ -206,13 +206,29 @@ class FieldDimensions extends React.Component {
   }
 }
 
+class FieldNumber extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return e('input', {
+      type: 'number',
+      value: this.props.value,
+      onChange: (event) => this.props.onChange(event.target.value)
+    });
+  }
+}
+
+
 
 const fieldTypes = {
   text: FieldText,
   textarea: FieldTextArea,
   options: FieldOptions,
   table: FieldTable,
-  dimensions: FieldDimensions
+  dimensions: FieldDimensions,
+  number: FieldNumber
 };
 
 class TemplateInput extends React.Component {

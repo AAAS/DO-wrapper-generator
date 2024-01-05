@@ -19,6 +19,11 @@
         table.tablepreview tr {
             border: 1px solid black
         }
+
+        input[type="number" i] + div{
+            display: inline-block;
+            margin-left: 4px;
+        }
     </style>
     <body>
         <div id="app_container">
