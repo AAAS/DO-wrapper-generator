@@ -677,7 +677,7 @@ const templateList = [
     html: `
 <figure class="news-article__figure border-light-gray">
   <div class="news-article__figure__image__wrapper">
-    <div class="juxtapose mb-2">
+    <div class="juxtapose mb-2" data-startingposition="{{{Slider start position}}}%">
       <img src="{{{Left image file path}}}" data-label="{{{Left image label}}}" alt="{{{Left image alt text}}}" />
       <img src="{{{Right image file path}}}" data-label="{{{Right image label}}}" alt="{{{Right image alt text}}}" />
     </div>
