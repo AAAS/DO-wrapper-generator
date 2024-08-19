@@ -458,6 +458,35 @@ const templateList = [
     `
   },
   {
+    name: "Figure: Graphic with locator map",
+    fields: [
+      { name: "Graphic hed" },
+      { name: "Graphic explainer", type: "textarea" },
+      { name: "Image file path (locator map)"},
+      { name: "Alt text (locator map)"},
+      { name: "Image file path (main graphic)"},
+      { name: "Alt Text (main graphic)" },
+      { name: "Credit Text" }
+    ],
+    html: `
+<figure class="news-article__figure border-light-gray">
+  <figure class="news-article__figure border-light-gray quarter float-right plain">
+    <div class="news-article__figure__image__wrapper">
+      <img src="{{{Image file path (locator map)}}}" alt="{{{Alt text (locator map)}}}" class="news-article__figure__image mb-2">
+    </div>
+  </figure> 
+  <figcaption class="news-article__figure__upper-caption">
+    <h3 class="text-lg letter-spacing-default">{{{Graphic hed}}}</h3>
+    <p>{{{Graphic explainer}}}</p>
+  </figcaption>
+  <img src="{{{Image file path (main graphic)}}}" alt="{{{Alt Text (main graphic)}}}" class="news-article__figure__image">
+  <figcaption class="news-article__figure__caption mt-2">
+    <span class="text-sm text-gray letter-spacing-default"><span class="text-xxs text-uppercase">{{{Credit Text}}}</span></span>
+  </figcaption>
+</figure>
+    `
+  },
+  {
     name: "Figure: Image",
     fields: [
       {
