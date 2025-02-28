@@ -966,9 +966,13 @@ const templateList = [
     `
   },
   {
-    name: "Twitter embed",
+    name: "Twitter or Bluesky embed",
+    desc: `
+    <div>For a Bluesky embed, paste the following script into the <strong>External JS Import</strong> field:</div>
+    <pre>&lt;script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"&gt;&lt;/script&gt;</pre>
+    `,
     fields: [
-      { name: "Embed code from Twitter" },
+      { name: "Embed code from Twitter or Bluesky" },
       {
         name: "Is there a caption?",
         type: "options",
@@ -983,7 +987,7 @@ const templateList = [
     html: `
 <figure class="news-article__figure border-light-gray half float-right{{{Is there a caption?}}}">
   <div class="news-article__figure__image__wrapper">
-    {{{Embed code from Twitter}}}
+    {{{Embed code from Twitter or Bluesky}}}
   </div>
   <figcaption class="news-article__figure__caption"><span class="text-sm text-gray letter-spacing-default">{{{Caption}}}</span></figcaption>
 </figure>
