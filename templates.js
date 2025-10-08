@@ -910,6 +910,7 @@ const templateList = [
   {
     name: "Audio",
     fields: [
+      { name: "DOI" },
       { name: "Audio URL", note:"Whenever possible, audio should be hosted on an external service such as Libsyn. If the audio is hosted in Atypon as a file uploaded to the Digital Object, the URL path should follow this format: /do/[doi]/full/[filename] e.g. /do/10.1126/science.ada1713/full/_20220224_bocon_toadfish.mp3" },
       { name: "Audio Length", note:"Format as mm:ss, e.g. 01:45" },
       {
@@ -940,6 +941,9 @@ const templateList = [
                     <i class="icon-media-forward"><span>Skip forwards</span></i><span class="sr-only">Go ten seconds forward</span>
                 </button>
             </div>
+            <audio id="media-player-sound" class="media-player" controls="controls" data-track-media-endpoint="$[$ trackMediaUrlReplacer, {{{DOI}}}, {{{Audio URL}}}, audio, false $]$">
+              <source src="{{{Audio URL}}}" type="audio/mpeg" />
+            </audio>
             <div class="audio-player__progress">
                 <div class="audio-player__progress-buffer">&nbsp;</div>
                 <div class="audio-player__progress-play">&nbsp;</div>
