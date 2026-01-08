@@ -941,13 +941,13 @@ const templateList = [
                     <i class="icon-media-forward"><span>Skip forwards</span></i><span class="sr-only">Go ten seconds forward</span>
                 </button>
             </div>
-            <audio id="media-player-sound" class="media-player" controls="controls" data-track-media-endpoint="$[$ trackMediaUrlReplacer, {{{DOI}}}, {{{Audio URL}}}, audio, false $]$">
+            <audio id="media-player-sound" class="media-player" controls="controls" preload="none" data-track-media-endpoint="$[$ trackMediaUrlReplacer, {{{DOI}}}, {{{Audio URL}}}, audio, false $]$">
               <source src="{{{Audio URL}}}" type="audio/mpeg" />
             </audio>
             <div class="audio-player__progress">
                 <div class="audio-player__progress-buffer">&nbsp;</div>
                 <div class="audio-player__progress-play">&nbsp;</div>
-                <div class="audio-player__progress-tooltip text-uppercase text-xss">&nbsp;</div>
+                <div class="audio-player__progress-tooltip text-uppercase text-xxs">&nbsp;</div>
                 <label class="sr-only" for="audio-progress-38">Progress</label><input id="audio-progress-38" class="audio-player__progress-current" max="100" name="track" type="range" value="50" />
             </div>
             <div class="audio-player__volume">
